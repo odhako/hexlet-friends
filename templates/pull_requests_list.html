@@ -7,7 +7,12 @@
 <!-- End Open Graph tags -->
 {% block header %}{% trans "Pull requests" %}{% endblock %}
 {% block content %}
-  {% include 'components/sort_and_search_form.html' %}
+  
+  <form method="get">
+    {{ filter.form }}
+      <input class="btn btn-primary" type="submit" value="{% trans 'Search' %}">
+  </form>
+
   {% include 'components/tables/pull_requests_list.html' %}
   {% include 'components/pagination.html' %}
 {% endblock content %}
